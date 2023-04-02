@@ -1,0 +1,25 @@
+digraph block_diagram
+{
+	label = "block_diagram";
+
+	input[style = invis, shape = point]
+	output[style = invis, shape = point]
+
+	a[shape = ellipse, label = "build.sh"]
+	b[shape = ellipse, label = "c"]
+	c[shape = ellipse, label = "bin"]
+	d[shape = ellipse, label = "graphviz"]
+	e[shape = ellipse, label = "R"]
+	f[shape = ellipse, label = "plot"]
+	g[shape = ellipse, label = "LaTeX"]
+	h[shape = ellipse, label = "pdf"]
+
+	a -> b
+	b -> c[taillabel = "make"]
+	c -> d
+	d -> g
+	c -> e[taillabel = "output"]
+	e -> f
+	f -> g
+	g -> h
+}
